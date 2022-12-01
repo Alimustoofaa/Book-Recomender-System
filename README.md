@@ -103,9 +103,17 @@ Yntuk menghilangkan permasalahan-permasalahan yang dapat mengganggu hasil daripa
 
 Dari hasil tersbut memiliki hasil yang sama dengan melakukan uji menggunakan judul buku yang berbeda yaitu Vilotes Are Blue dan Pop Goes the Weasel.
 
- 2. Collaborative Content Filtering.
- Dengan User-Based maka pengguna mendapatkan rekomendasi-rekomendasi buku berdasarkan penilaian pengguna.
- 
+ - Collaborative Content Filtering.
+Dalam  Collaborative Content Filtering disini menggunakan data data user dan rating untuk menghasilkan rekomendasi berdasarkan preferensi pengguna berdasarkan rating yang telah diberikan sebelumnya. Dari data yang ada berikut adalah processnya:
+	 - Preparing data: data yang digunakan adalah data rating
+	 - Penambahan column:  menambahkan column book yang berisi encode index isbn dan user berisi encode index user untuk dijadikan data training.
+	 - Mengacak data: Sebelum training data diacak untuk menghasilkan data train yang baik
+	 - Train test dataset: Selanjutnya membagi data train dan test dengan komposisi 70% data train dan 30% data test
+	 -  Model : Disini menggunakan model keras dengan menghidung kecocokan antara num_user dan num_isbn dengan teknik embedding.
+	 - Compile model: Model ini menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation.
+	 - Training process: Ditahap training process disini menggunakan model dengan batch_size =. 64 dan epochs =10.
+	 -  Testing model: Berikut hasil testing model:
+
 |Top 10 Book Recommendation for user: 78834|
 |-----------------------------------------------------------------------------------------------------------------------------------|
 | Animal Farm : George Orwell                                                                                                       |
