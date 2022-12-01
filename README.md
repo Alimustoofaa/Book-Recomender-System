@@ -78,18 +78,48 @@ Yntuk menghilangkan permasalahan-permasalahan yang dapat mengganggu hasil daripa
 
 ###  Modeling and Result
 
- Proses modeling yang  dilakukan pada data ini adalah dengan membuat algoritma machine learning, yaitu content based filtering dan collabrative filtering. untuk algoritma content based filtering  dibuat dengan apa yang disukai pengguna pada masa lalu, sedangkan untuk content based filtering,  dibuat dengan memanfaatkan tingkat rating dari buku tersebut. Berikut hasil dari 2 algoritma tersebut:
+ Proses modeling yang  dilakukan pada data ini adalah dengan membuat algoritma machine learning, yaitu content based filtering dan collabrative filtering. untuk  content based filtering  menggunakan algoritma *Cosine Similarity* algoritma tersebut mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama.  Sedangkan collabrative filtering  menggunakan *User-Based* untuk mendapatkan rekomendasi disini menggunakan penilaian dari pengguna untuk mendapatkan rekomendasi buku-buku . Berikut hasil dari 2 algoritma tersebut:
  
 
  1. Content Based Filtering
- algoritma tersebut  merekomendasikan buku serupa dengan apa yang disukai pengguna, berdasarkan tindakan mereka sebelumnya atau umpan balik eksplisit.
-<div><img src="https://user-images.githubusercontent.com/56061857/204862913-82c1054c-0e16-4e17-91db-bfea9d5b9b28.png" width="450"/></div>
+ Menggunakan algoritm *Cosine Similarity* algoritma tersebut mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama. Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity.  Dari algoritma tersebut bisa bisa diterapkan dengan mengukur kesamaan dari judul buku. 
+
+|recommend ('1st to Die: A Novel')     |
+|-----------------------------------------|
+| Along Came a Spider (Alex Cross Novels) |
+| Roses Are Red (Alex Cross Novels)       |
+| Pop Goes the Weasel                     |
+| Violets Are Blue                        |
+| Lightning                               |
+
+
+| recommend ('Roses Are Red (Alex Cross Novels')|
+|---------------------------------------------------|
+| Kiss the Girls                                    |
+| Violets Are Blue                                  |
+| 1st to Die: A Novel                               |
+| The Murder Book                                   |
+| Pop Goes the Weasel                               |
+
 Dari hasil tersbut memiliki hasil yang sama dengan melakukan uji menggunakan judul buku yang berbeda yaitu Vilotes Are Blue dan Pop Goes the Weasel.
 
  2. Collaborative Content Filtering.
- algoritma tersebut bergantung pada pendapat komunitas pengguna. Dia tidak memerlukan atribut untuk setiap itemnya.
- <div><img src="https://user-images.githubusercontent.com/56061857/204974665-4b40f0e9-d919-4673-9903-287f1ec65a98.png" width="450"/></div>
- Dari hasil tersebut memiliki 10 rekomendasi terbaik berdasarkan yang dibaca user
+ Dengan User-Based maka pengguna mendapatkan rekomendasi-rekomendasi buku berdasarkan penilaian pengguna.
+ 
+|Top 10 Book Recommendation for user: 78834|
+|-----------------------------------------------------------------------------------------------------------------------------------|
+| Animal Farm : George Orwell                                                                                                       |
+| Captain Underpants and the Attack of the Talking Toilets: Another Epic Novel (Captain Underpants (Paper)) : Dav Pilkey            |
+| Harry Potter and the Order of the Phoenix (Book 5) : J. K. Rowling                                                                |
+| Angus, Thongs and Full-Frontal Snogging: Confessions of Georgia Nicolson : Louise Rennison                                        |
+| The Color Purple : Alice Walker                                                                                                   |
+| The Lost Boy: A Foster Child's Search for the Love of a Family : Dave Pelzer                                                      |
+| A Light in the Attic : Shel Silverstein                                                                                           |
+| Good Work, Amelia Bedelia : Peggy Parish                                                                                          |
+| Cooking with Mickey &amp; Friends : More Than 30 Recipes for Kids Easy to Make and Even Easier to Eat! (Disneys) : Patricia Baird |
+| After the Plague: Stories : T. Coraghessan Boyle                                                                                  |
+
+Dari hasil tersebut memiliki 10 rekomendasi terbaik berdasarkan yang dibaca user
 
 
  
